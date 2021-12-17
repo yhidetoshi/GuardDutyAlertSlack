@@ -3,7 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"fmt"
-	"guardduty-lambda/slack"
+	"guardduty-lambda/notification"
 	"os"
 	"strconv"
 
@@ -78,7 +78,7 @@ func Handler(event events.CloudWatchEvent) (events.CloudWatchEvent, error) {
 
 	// Post slack
 	if float64Severity > float64NotPostThreshold {
-		slack.PostSlack(slackColor, gd.Title, accountAliasName, string(gd.Severity), resource, gd.Type, gd.Description)
+		notification.PostSlack(slackColor, gd.Title, accountAliasName, string(gd.Severity), resource, gd.Type, gd.Description)
 	}
 	return event, err
 }
