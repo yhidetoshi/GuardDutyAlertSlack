@@ -1,6 +1,6 @@
 # GuardDutyAlertSlack
 
-Guarddutyの結果をEventBridge経由でLambdaからSlackに通知する
+Guarddutyの結果をEventBridgeとLambdaを使ってSlackに通知する
 
 - コンパイルとデプロイ
 ```bash
